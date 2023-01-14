@@ -1,5 +1,5 @@
-import Typography from "@mui/material/Typography";
-import { Component } from "react";
+import Typography from "@mui/material/Typography"
+import { Component } from "react"
 
 export class ErrorBoundary extends Component<any, any> {
   constructor(props: any) {

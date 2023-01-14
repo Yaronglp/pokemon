@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 import Button from '@mui/material/Button'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
 import { useRouter } from 'next/router'
 import { Picture } from './picture'
 

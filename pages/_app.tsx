@@ -14,17 +14,17 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Router.events.on("routeChangeStart", (url)=>{
       setIsLoading(true)
-    });
+    })
 
     Router.events.on("routeChangeComplete", (url)=>{
       setIsLoading(false)
-    });
+    })
 
     Router.events.on("routeChangeError", (url) =>{
       setIsLoading(false)
-    });
+    })
 
-  }, [Router])
+  }, [])
 
   const isRouterQueryEmpty = JSON.stringify(router.query) === '{}'
   const isActivatedLink = !isRouterQueryEmpty && !isLoading

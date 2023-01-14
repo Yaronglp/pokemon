@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 import Container from '@mui/material/Container'
 import React from 'react'
 import { EPicSize, Picture } from './picture'
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import Typography from '@mui/material/Typography'
 
 interface IItem{
   name: string
