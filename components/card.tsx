@@ -15,7 +15,7 @@ export const CardItem = ({id, name, image}: ICardItem) => {
   const router = useRouter()
 
   function showCardDetails() {
-    router.push(`/${id}`)
+    router.push(`/pokemon/${id}`)
   }
 
   return (

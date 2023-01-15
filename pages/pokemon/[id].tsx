@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
-import { Details, IDetails } from '../components/details'
-import { POKEMON_BASE_URL, POKEMON_LIST_URL } from '../utils/constants'
+import { Details, IDetails } from '../../components/details'
+import { POKEMON_BASE_URL, POKEMON_LIST_URL } from '../../utils/constants'
 
 const PokemonDetails = ({pokemon}: {pokemon: IDetails}) => {
   return (
