@@ -6,6 +6,10 @@ const DIMENSION = {
     WIDTH: 200,
     HEIGHT: 200
   },
+  MEDIUM: {
+    WIDTH: 250,
+    HEIGHT: 250
+  },
   LARGE: {
     WIDTH: 400,
     HEIGHT: 400
@@ -14,6 +18,7 @@ const DIMENSION = {
 
 export enum EPicSize {
   sm = 'SM',
+  medium = 'MEDIUM',
   large = 'LARGE'
 }
 

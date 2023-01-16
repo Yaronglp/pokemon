@@ -24,7 +24,7 @@ export default CardList
 
 const CardListStyled = styled.div`
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 30% 30% 30%;
   grid-gap: 2rem;
-  row-gap: 8rem;
+  row-gap: 4rem;
 `

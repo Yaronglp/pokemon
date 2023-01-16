@@ -52,4 +52,8 @@ const WrapperStyled = styled.main`
   justify-content: center;
   align-items: center;
   padding: var(--double-spacer) 2rem;
+
+  @media (max-height: 500px) {
+    padding: var(--spacer) 2rem;
+  }
 `

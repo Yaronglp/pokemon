@@ -32,9 +32,15 @@ const HeaderStyled = styled.header`
   background: var(--white);
   z-index: 1;
 
-  a:hover{
+  a:hover {
     display: inline-block;
     scale: 1.1;
+  }
+
+  @media (max-height: 500px) {
+    a {
+      font-size: 2rem;
+    }
   }
 `
 
