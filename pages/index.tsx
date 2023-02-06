@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import React from 'react'
+import { Router } from 'next/router'
+import React, { useContext, useEffect } from 'react'
 import CardList from '../components/cardList'
+import { ScrollContext } from '../providers/scroll'
 import { POKEMON_BASE_URL, POKEMON_LIST_URL } from '../utils/constants'
 
 interface IPokemonItem {
@@ -10,6 +12,29 @@ interface IPokemonItem {
 }
 
 const Pokemon = ({pokemon = []}: {pokemon: IPokemonItem[]}) => {
+  const { offsetY, updateOffsetY } = useContext(ScrollContext)
+
+  useEffect(() => {
+    const handleRouteChange = (url: unknown) => {
+      updateOffsetY(window.pageYOffset)
+    }
+
+    Router.events.on('routeChangeStart', handleRouteChange)
+
+    return () => {
+      Router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [updateOffsetY])
+
+  useEffect(() => {
+    if (offsetY > 0) {
+      window.scrollTo(0, offsetY)
+      setTimeout(() => {
+        updateOffsetY(0)
+      }, 0)
+    }
+  }, [offsetY, updateOffsetY])
+  
   return (
     <>
       <Head>

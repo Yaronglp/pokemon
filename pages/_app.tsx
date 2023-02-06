@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { Router, useRouter } from 'next/router'
 import { Loading } from '../components/loading'
 import { ErrorBoundary } from '../components/ErrorBoundary'
+import { ScrollContextProvider } from '../providers/scroll'
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -31,18 +32,20 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Header
-        customTitle={!isRouterQueryEmpty ? 'Go Back' : undefined} 
-        activateLink={ isActivatedLink }/>
-      {
-        isLoading ? 
-        <Loading/> :
-      (<WrapperStyled>
-        <ErrorBoundary>
-          <Component {...pageProps} />
-        </ErrorBoundary>
-      </WrapperStyled>)
-      }
+      <ScrollContextProvider>
+        <Header
+          customTitle={!isRouterQueryEmpty ? 'Go Back' : undefined} 
+          activateLink={ isActivatedLink }/>
+        {
+          isLoading ? 
+          <Loading/> :
+        (<WrapperStyled>
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        </WrapperStyled>)
+        }
+      </ScrollContextProvider>
     </>
   )
 }
